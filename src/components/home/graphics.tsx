@@ -28,8 +28,10 @@ export const Graphics = ({ data }: Props) => {
             value={porcentajeFallecidos}
             text={`${porcentajeFallecidos}%`}
             styles={buildStyles({
-              pathColor: `rgba(201, 4, 4)`,
+              pathColor: "#A22340",
+              strokeLinecap: "butt",
             })}
+            strokeWidth={50}
           />
           <GraphicText>Personas fallecidos</GraphicText>
         </Graphic>
@@ -37,6 +39,11 @@ export const Graphics = ({ data }: Props) => {
           <CircularProgressbar
             value={porcentajeRecuperados}
             text={`${porcentajeRecuperados}%`}
+            styles={buildStyles({
+              strokeLinecap: "butt",
+              textColor: "#fff",
+            })}
+            strokeWidth={50}
           />
           <GraphicText>Personas recuperadas</GraphicText>
         </Graphic>

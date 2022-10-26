@@ -7,7 +7,7 @@ export const GraphicsContainer = styled.div`
 `;
 
 export const Graphic = styled.div`
-  width: 25%;
+  width: 20%;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -15,6 +15,8 @@ export const Graphic = styled.div`
 `;
 
 export const GraphicText = styled.span`
-  font-size: 28px;
+  font-size: 24px;
   font-weight: bold;
+  text-align: center;
+  width: 100%;
 `;
