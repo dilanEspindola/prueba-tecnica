@@ -1,9 +1,11 @@
 import { useState, useEffect } from "react";
 import { getData } from "@/services";
 import { FetchData } from "@/interfaces";
-import { CovidList, Graphics, Panel } from "@/components/home";
+import { CovidList, Graphics } from "@/components/home";
 import { LoadingData } from "@/components/loaders";
-import { Container } from "@/styles";
+import { Sidebar } from "@/components/sidebar";
+import { Container, ContainerData } from "@/styles";
+import { ErrorFetching } from "@/utils";
 
 const Home = () => {
   const [covidData, setCovidData] = useState<FetchData[]>([]);
@@ -19,13 +21,15 @@ const Home = () => {
 
   if (isLoading) return <LoadingData />;
 
-  if (error) return <div>Error al obtener los datos</div>;
+  if (error) return <ErrorFetching />;
 
   return (
     <Container>
-      <Panel />
-      <Graphics data={covidData} />
-      <CovidList data={covidData} />
+      <Sidebar />
+      <ContainerData>
+        <Graphics data={covidData} />
+        <CovidList data={covidData} />
+      </ContainerData>
     </Container>
   );
 };
